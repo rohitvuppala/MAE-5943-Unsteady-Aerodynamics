@@ -4,3 +4,4 @@ Solutions of fundamental problems (Hiemenz, Homann, Blasius, etc. ) using Julia 
 - Hiemenz Flow (two-dimensional stagnation point flow)
 - Homann Flow (axisymmetric stagnation point flow)
 - Blasius Flow (flow over a flat plate)
+- Falkner-Skan Similarity Solution
