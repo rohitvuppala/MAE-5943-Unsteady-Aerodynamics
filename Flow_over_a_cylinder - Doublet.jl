@@ -51,8 +51,9 @@ Y location: $(@bind Δy Slider(-5.0:0.1:5.0,default = 0.0))
 begin
 	
     fs = Freestreams.Freestream(1.0)
-	
-	location = (Δx + Δy*im) 
+	Δx1 = convert(Float64,Δx)
+	Δy1 = convert(Float64,Δy)
+	location = (Δx1 + Δy1*im) 
 	
 	db = Doublets.Doublet(location, doublet_strength)
 	
