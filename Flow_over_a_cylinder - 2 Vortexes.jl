@@ -34,18 +34,19 @@ end
 
 # ╔═╡ ede98510-153b-11eb-1e6d-b1e9ad472350
 md"""
-Vortex strength: $(@bind vortex_strength Slider(-2π:π/10:2π,default=2π))
+Vortex strength: $(@bind vortex_strength Slider(-2π:π/10:2π,show_value=true,default=2π))
 """
 
 # ╔═╡ 7a6a3060-153d-11eb-0208-a9fc8710ab9a
 md"""
-Y location: $(@bind Δy Slider(-10:0.1:10,default=1.0))
+Y location: $(@bind Δy Slider(-10:0.1:10,show_value=true,default=1.0))
 """
 
 # ╔═╡ 2e843420-1538-11eb-14b2-d9ab38fa091b
 begin
 	
     fs = Freestreams.Freestream(1.0)
+
 	vp = Vortex.Point.(0.5*Δy*[im,-im], [-vortex_strength, vortex_strength])
 	
 	ψ_levels = collect(range(-5,5,length=31))
@@ -61,7 +62,7 @@ begin
 		ylim = (-3.5, 3.5))
 	
 	#circular cylinder
-	plot!(cos.(0:0.1:2π), sin.(0:0.1:2π), linestyle = :dash )
+	plot!(cos.(0:0.1:2π), sin.(0:0.1:2π), linestyle = :dash, linewidth=2 )
 
 
 end

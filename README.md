@@ -5,3 +5,8 @@ Solutions of fundamental problems (Hiemenz, Homann, Blasius, etc. ) using Julia 
 - Homann Flow (axisymmetric stagnation point flow)
 - Blasius Flow (flow over a flat plate)
 - Falkner-Skan Similarity Solution
+Using PotentialFlow Package JuliaLang
+- Elementaty Potential Flows
+- Flow over a cylinder
+	- 2 Vortex
+	- Doublet
