@@ -34,25 +34,26 @@ end
 
 # ╔═╡ ede98510-153b-11eb-1e6d-b1e9ad472350
 md"""
-Doublet strength: $(@bind doublet_strength Slider(0:π/10:2π, default = π))
+Doublet strength: $(@bind doublet_strength Slider(0:π/10:2π,show_value=true, default = π))
 """
 
 # ╔═╡ 3d84d310-153f-11eb-1520-17b8af3cf1d0
 md"""
-X location: $(@bind Δx Slider(-5.0:0.1:5.0,default = 0.0))
+X location: $(@bind Δx Slider(-5.0:0.1:5.0,show_value=true,default = 0.0))
 """
 
 # ╔═╡ 7a6a3060-153d-11eb-0208-a9fc8710ab9a
 md"""
-Y location: $(@bind Δy Slider(-5.0:0.1:5.0,default = 0.0))
+Y location: $(@bind Δy Slider(-5.0:0.1:5.0,show_value=true,default = 0.0))
 """
 
 # ╔═╡ 2e843420-1538-11eb-14b2-d9ab38fa091b
 begin
 	
     fs = Freestreams.Freestream(1.0)
-	
-	location = (Δx + Δy*im) 
+	Δx1 = convert(Float64,Δx)
+	Δy1 = convert(Float64,Δy)
+	location = (Δx1 + Δy1*im) 
 	
 	db = Doublets.Doublet(location, doublet_strength)
 	
@@ -69,7 +70,7 @@ begin
 		ylim = (-3.5, 3.5))
 	
 	#circular cylinder
-	plot!(cos.(0:0.1:2π), sin.(0:0.1:2π), linestyle = :dash )
+	plot!(cos.(0:0.1:2π), sin.(0:0.1:2π), linestyle = :dash, linewidth=4 )
 
 
 end
